@@ -127,7 +127,7 @@ img { max-width: 100%; height: auto; } /* Prevents image overflow on mobile */
 
 /* Page Header (Inner Pages) */
 .page-header {
-    background: linear-gradient(135deg, rgba(0, 86, 179, 0.95), rgba(0, 168, 204, 0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600');
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.95), rgba(0, 168, 204, 0.8)), url('celebration.jpg');
     background-size: cover; background-position: center; color: white;
     padding: 120px 0 40px; 
     text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 50px;
