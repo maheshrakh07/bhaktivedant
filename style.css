@@ -18,9 +18,10 @@ body {
 
 a { text-decoration: none; }
 ul { list-style: none; padding: 0; margin: 0; }
+img { max-width: 100%; height: auto; } /* Prevents image overflow on mobile */
 
 /* =========================================
-   2. NAVBAR STYLES (Glassmorphism)
+   2. NAVBAR STYLES (Glassmorphism & Pulse)
    ========================================= */
 .top-bar {
     background-color: var(--primary-color);
@@ -46,7 +47,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .brand-icon-box {
-    background: #e6f7ff; width: 65px; height: 65px; border-radius: 12px;
+    background: #e6f7ff; width: 45px; height: 45px; border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     margin-right: 12px; color: var(--primary-color);
 }
@@ -90,7 +91,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 /* =========================================
-   3. HOME CAROUSEL (Keep large for impact)
+   3. HERO SLIDER (Index Page)
    ========================================= */
 .hero-slider { position: relative; height: 85vh; min-height: 500px; overflow: hidden; }
 .carousel-item { height: 85vh; min-height: 500px; background: #000; }
@@ -124,16 +125,15 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 .services-section, .dept-section, .booking-section, .values-section { background-color: #f8f9fa; }
 
-/* --- UPDATED: SMALLER PAGE HEADER (Approx 200px) --- */
+/* Page Header (Inner Pages) */
 .page-header {
-    background: linear-gradient(135deg, rgba(0, 86, 179, 0.75), rgba(0, 168, 204, 0.8)), url('celebration.jpg');
-    background-size: cover; background-position: top center; color: white;
-    /* Reduced Padding: Top padding allows space for navbar, bottom is small */
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.95), rgba(0, 168, 204, 0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600');
+    background-size: cover; background-position: center; color: white;
     padding: 120px 0 40px; 
     text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 50px;
-    min-height: 200px; /* Explicit constraint */
+    min-height: 200px;
 }
-.page-header h1 { font-size: 2.5rem; margin-bottom: 10px; } /* Smaller font for smaller hero */
+.page-header h1 { font-size: 2.5rem; margin-bottom: 10px; } 
 .page-header p.lead { font-size: 1rem; margin-bottom: 10px; }
 
 .breadcrumb {
@@ -258,7 +258,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .check-list i { color: #28a745; margin-right: 15px; font-size: 1.2rem; }
 
 /* Facilities (24/7 & ZigZag) */
-.facilities-247 { background: #1a1a38; color: white; padding: 100px 0; }
+.facilities-247 { background: #0f172a; color: white; padding: 80px 0; }
 .facility-box-247, .facility-card-small { text-align: center; padding: 30px; border-radius: 15px; transition: 0.3s; }
 .facility-box-247 { border: 1px solid rgba(255,255,255,0.1); }
 .facility-box-247:hover { background: rgba(255,255,255,0.05); transform: scale(1.05); }
@@ -369,21 +369,73 @@ ul { list-style: none; padding: 0; margin: 0; }
 .copyright-area { border-top: 1px solid rgba(255,255,255,0.05); padding: 25px 0; margin-top: 50px; text-align: center; font-size: 0.9rem; }
 
 /* =========================================
-   9. MEDIA QUERIES
+   9. RESPONSIVE MEDIA QUERIES (Mobile/Tablet/Laptop)
    ========================================= */
+
+/* --- TABLET & SMALL LAPTOP (max-width: 991px) --- */
 @media (max-width: 991px) {
+    /* Navbar */
     .top-bar { display: none; }
-    .navbar-collapse { background: white; padding: 20px; border-radius: 10px; margin-top: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .navbar-collapse {
+        background: white; padding: 20px; border-radius: 10px; margin-top: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
     .btn-emergency, .btn-book { width: 100%; margin-bottom: 10px; justify-content: center; }
+    
+    /* Layout Stacking */
     .booking-sidebar { padding: 40px; border-radius: 0 0 20px 20px; }
     .feature-row, .feature-row.reverse { flex-direction: column; }
     .feature-img-box { margin-bottom: 30px; }
+    
+    /* Map */
     .map-container { min-height: 350px; margin-top: 30px; }
 }
+
+/* --- MOBILE LANDSCAPE (max-width: 768px) --- */
 @media (max-width: 768px) {
+    /* Slider Text */
     .slider-title { font-size: 2.5rem; }
-    .hero-slider, .carousel-item { height: 70vh; }
+    .slider-text { font-size: 1rem; }
+    .hero-slider, .carousel-item { height: 70vh; min-height: 400px; }
+    
+    /* About & Timeline */
+    .about-section { padding: 50px 0; }
+    .experience-badge { width: 150px; padding: 15px; right: 20px; left: auto; bottom: -30px; }
+    .exp-number { font-size: 2rem; }
+    
     .timeline::before { left: 20px; }
     .timeline-row { width: 100%; left: 0 !important; padding-left: 50px !important; padding-right: 0 !important; text-align: left !important; }
     .timeline-row::after { left: 11px !important; }
+    
+    /* Section Headings */
+    .section-title { font-size: 2rem; }
+}
+
+/* --- MOBILE PORTRAIT (max-width: 576px) --- */
+@media (max-width: 576px) {
+    /* General */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .container { padding-left: 20px; padding-right: 20px; }
+    
+    /* Navbar Brand */
+    .navbar-brand { font-size: 1.4rem; }
+    
+    /* Hero Slider */
+    .hero-slider, .carousel-item { height: 60vh; min-height: 350px; }
+    .carousel-caption { bottom: 15%; left: 5%; right: 5%; }
+    .slider-title { font-size: 2rem; }
+    .btn-slider-primary, .btn-slider-outline { padding: 10px 20px; font-size: 0.9rem; }
+    
+    /* Page Headers */
+    .page-header { padding: 100px 0 30px; min-height: auto; }
+    .page-header h1 { font-size: 2rem; }
+    
+    /* Cards & Features */
+    .service-card, .creative-card, .facility-box, .gallery-item { margin-bottom: 15px; }
+    .form-wrapper, .booking-sidebar { padding: 30px 20px; }
+    .feature-text { padding: 20px 0; }
+    
+    /* Footer */
+    .mega-footer { padding-top: 60px; }
+    .footer-wave { height: 50px; top: -49px; }
 }
