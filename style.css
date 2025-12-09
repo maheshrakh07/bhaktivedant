@@ -46,7 +46,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 }
 
 .brand-icon-box {
-    background: #e6f7ff; width: 45px; height: 45px; border-radius: 12px;
+    background: #e6f7ff; width: 65px; height: 65px; border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     margin-right: 12px; color: var(--primary-color);
 }
@@ -258,7 +258,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 .check-list i { color: #28a745; margin-right: 15px; font-size: 1.2rem; }
 
 /* Facilities (24/7 & ZigZag) */
-.facilities-247 { background: #0f172a; color: white; padding: 80px 0; }
+.facilities-247 { background: #1a1a38; color: white; padding: 100px 0; }
 .facility-box-247, .facility-card-small { text-align: center; padding: 30px; border-radius: 15px; transition: 0.3s; }
 .facility-box-247 { border: 1px solid rgba(255,255,255,0.1); }
 .facility-box-247:hover { background: rgba(255,255,255,0.05); transform: scale(1.05); }
